@@ -1,0 +1,6 @@
+output.txt
+__pycache__
+.venv
+prelude/local_settings.py
+prelude/secrets.conf
+ubuntu-bionic-18.04-cloudimg-console.log
