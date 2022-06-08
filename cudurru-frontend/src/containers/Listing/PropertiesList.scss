@@ -1,0 +1,114 @@
+@import '../../sass/screen-size';
+@import '../../sass/variables';
+@import '../../sass/typography';
+
+.properties-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .properties-list-header{
+        display: flex;
+        flex-direction: row;
+        padding: 0 $spacing-s;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        @include breakpoint (mobile-only) {
+            flex-direction: column;
+        }
+        .order-by-container {            
+
+            .order-by-dropdown {
+                margin: $spacing-xs 0;
+                @include body-01;
+                color: $gray-02;
+                background-color: $yellow;
+                border-radius: 5px;
+
+                padding: $spacing-xxs $spacing-s $spacing-xxs $spacing-xs;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                border: none;
+                outline: none;
+
+                background-image: url(../../assets/dropdown-arrow.svg);
+                background-repeat: no-repeat;
+                background-position-x: calc(100% - 7px);
+                background-position-y: center;
+
+                .order-by-option:hover {
+                    background-color: $yellow-light;
+                }
+            }
+        }
+    }
+    .found-items {
+        @include headline-03;
+        color: $gray-02;
+        margin: $spacing-xs 0;
+    }
+
+    .property-results {
+        margin-bottom: calc(#{$spacing-l} + 45px); //Pagination height
+        .properties-number {
+            @include body-01;
+            color: $gray-02;
+            text-align: center;
+            margin-bottom: $spacing-m;
+        }
+        .properties {
+            display: grid;
+            column-gap: $spacing-s;
+            row-gap: $spacing-s;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: 1fr;
+
+            padding: 0 $spacing-s;
+
+            @include breakpoint(tablet-up) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include breakpoint(desktop-up) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+
+    .pagination {
+        position: absolute;
+        bottom: 0;
+
+        .page-item,
+        .page-link {
+            @include body-01;
+            cursor: pointer;
+
+            color: $gray-03;
+            &:hover {
+                background-color: $gray-08;
+            }
+        }
+
+        .disabled {
+            cursor: default;
+            .page-link {
+                color: $gray-07;
+                &:hover {
+                    background-color: $gray-09;
+                }
+            }
+        }
+
+        .active {
+            .page-link {
+                background-color: $yellow;
+                border-color: $yellow;
+                color: $gray-02;
+            }
+        }
+    }
+}

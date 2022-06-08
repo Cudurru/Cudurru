@@ -1,0 +1,25 @@
+@import '../../sass/screen-size';
+@import '../../sass/variables';
+
+ .listing-characteristics .home-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-content: center;
+  column-gap: $spacing-m;
+
+  @include breakpoint(mobile-only) {
+    grid-template-columns: 1fr;
+  }
+
+  .input {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    flex: 50%;
+
+    @include breakpoint(tablet-mobile-up) {
+      padding: 0;
+    }
+  }
+ }

@@ -1,0 +1,109 @@
+---
+- name: Install frontend dep gpg keys
+  apt_key: url={{ item }}
+  with_items:
+    - https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    - https://dl.yarnpkg.com/debian/pubkey.gpg
+
+- name: Install frontend dep repos
+  apt_repository: repo={{ item }} update_cache=yes
+  with_items:
+    - deb https://dl.yarnpkg.com/debian/ stable main
+    - ppa:certbot/certbot
+
+- name: Install nodejs
+  shell: curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+  args:
+    executable: /bin/bash
+
+- name: upgrade packages
+  apt:
+    upgrade: yes
+    update_cache: yes
+
+- name: Install system dependencies
+  apt:
+    name:
+      - postgresql
+      - postgresql-contrib
+      - libpq-dev
+      - python3-dev
+      - python3-pip
+      - python3-psycopg2
+      - acl
+      - yarn
+      - nginx
+      - nodejs
+      - python-certbot-nginx
+      - postgis
+      - python-certbot-nginx
+
+- name: Make sure we have a 'wheel' group
+  group:
+    name: wheel
+    state: present
+
+- name: Allow wheel group to have passwordless sudo
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^%wheel'
+    line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+
+- name: Create deploy user with sudo access.
+  user:
+    name: '{{ deploy_user }}'
+    groups: wheel
+    append: yes
+    state: present
+    createhome: yes
+    shell: /bin/bash
+
+- name: Restart sshd
+  service:
+    name: sshd
+    enabled: yes
+    state: restarted
+
+- name: Deploy code to working dir
+  shell: rsync -avz --no-compress /vagrant/ /opt
+  when: target == 'dev'
+
+- name: Set permissions to {{ deploy_user }}
+  file:
+    path: /opt
+    state: directory
+    recurse: yes
+    owner: '{{ deploy_user }}'
+    group: '{{ deploy_group }}'
+    mode: u+w
+
+- name: Setup nginx vhost conf
+  template:
+    src: cudurru-vhost.conf.j2
+    dest: /etc/nginx/sites-enabled/cudurru-vhost.conf
+
+- name: restart nginx
+  service:
+    name: nginx
+    state: restarted
+    enabled: yes
+
+- name: Install pexpect
+  pip:
+    name: pexpect
+
+- name: Request new cert for {{ server_name }}
+  expect:
+    command: "certbot -d {{ server_name }} --nginx"
+    responses:
+      "Enter email address": "{{ certbot_email }}"
+      "agree in order to register with the ACME server": "A"
+      "Would you be willing to share your email address with the Electronic Frontier": "N"
+      "Select the appropriate number": "{{ force_redirect }}"
+  register: output
+  when: "'dev' not in group_names"
+
+- name: Certbot output
+  debug: msg="{{ output.stdout }}"
+  when: "'dev' not in group_names"

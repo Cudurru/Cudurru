@@ -1,0 +1,19 @@
+---
+- hosts: '{{ target }}'
+  become: yes
+  become_user: root
+  tasks:
+  - name: Load vars
+    include_vars:
+      dir: vars
+  - import_tasks: system.yml
+
+- hosts: '{{ target }}'
+  become: yes
+  become_user: cudurru
+  tasks:
+  - name: Load vars
+    include_vars:
+      dir: vars
+  - import_tasks: services.yml
+  - import_tasks: frontend.yml

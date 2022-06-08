@@ -1,0 +1,46 @@
+@import '../../sass/layout.scss';
+@import '../../sass/screen-size';
+@import '../../sass/variables';
+@import '../../sass/typography';
+
+.delete-listing {
+    @include page-spacing();
+    display: flex;
+    justify-content: center;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 600px;
+    }
+    .delete-message {
+        @include body-02;
+        span {
+            @include body-02-bold;
+        }
+    }
+    .headline {
+        @include headline-03;
+        color: $gray-01;
+        margin-bottom: $spacing-xs;
+    }
+    .subtitle {
+        @include body-02;
+        color: $gray-02;
+    }
+    .button-actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: $spacing-s;
+
+        button,
+        a {
+            margin-left: $spacing-xxs;
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,37 @@
+@import '../../sass/screen-size';
+@import '../../sass/variables';
+@import '../../sass/typography';
+@import '../../sass/layout';
+
+.my-listings {
+    @include page-spacing();
+    background-color: $light-background-color;
+    color: $gray-02;
+    padding-left: 0;
+    padding-right: 0;
+
+    position: relative;
+
+    &-content {
+        margin: 0 auto;
+    }
+    h1 {
+        @include headline-03;
+        margin-left: $spacing-s;
+        margin-right: $spacing-s;
+        margin-bottom: $spacing-xxs;
+    }
+    p {
+        @include body-02;
+        margin-left: $spacing-s;
+        margin-right: $spacing-s;
+        margin-bottom: $spacing-xxs;
+        max-width: 600px;
+    }
+
+    .your-listings-page {
+        .property-results {
+            margin-bottom: $spacing-l;
+        }
+    }
+}

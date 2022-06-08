@@ -1,0 +1,8 @@
+"""
+local settings, file is created unique ot each env
+"""
+SQLALCHEMY_DATABASE_URI = "postgresql://{{ postgres_user }}:{{ postgres_password }}@{{ postgres_host }}:{{ postgres_port }}/{{ postgres_db_name }}"
+BCRYPT_LEVEL=11
+JWT_PRIVATE_KEY="{{ b64_jwt_private_key }}"
+CONFIG_FILE_NAME= "prelude/config.yml"
+UPLOAD_DIR="prelude/tmp"

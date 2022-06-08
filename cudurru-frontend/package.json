@@ -1,0 +1,61 @@
+{
+  "name": "boilerplate-react-parcel",
+  "version": "1.0.0",
+  "description": "Boilerplate for React.js app with parcel bundler",
+  "main": "src/index.html",
+  "scripts": {
+    "setup": "sh init.sh",
+    "dev": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html",
+    "format": "prettier \"src/**/*.{js,html}\" --write",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.8.3",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-import-resolver-babel-module": "^5.1.1",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^1.19.1",
+    "sass": "^1.29.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.3",
+    "fetch-wrap": "^0.1.2",
+    "google-map-react": "^2.1.9",
+    "react": ">=16.8.0",
+    "react-addons-update": "^15.6.2",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": ">=16.8.0",
+    "react-google-autocomplete": "^1.1.4",
+    "react-paginate": "^6.5.0",
+    "react-responsive-carousel": "^3.2.10",
+    "react-router": "^5.1.2",
+    "react-router-component": "^0.40.0",
+    "react-router-dom": "^5.1.2",
+    "react-slick": "^0.25.2",
+    "simple-react-validator": "^1.4.6"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 ChromeAndroid versions",
+    "last 2 Firefox versions",
+    "last 2 FirefoxAndroid versions",
+    "last 2 Safari versions",
+    "last 2 iOS versions",
+    "last 2 Edge versions",
+    "last 2 Opera versions",
+    "last 2 OperaMobile versions"
+  ]
+}

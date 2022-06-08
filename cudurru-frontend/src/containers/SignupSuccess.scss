@@ -1,0 +1,28 @@
+@import '../sass/screen-size';
+@import '../sass/variables';
+@import '../sass/typography';
+@import '../sass/layout';
+
+.signup-success {
+    @include page-spacing();
+    color: $gray-02;
+
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            @include body-02;
+        }
+
+        h2 {
+            @include headline-03;
+        }
+        .button-primary {
+            margin-top: $spacing-s;
+            align-self: flex-end;
+        }
+    }
+}

@@ -1,0 +1,94 @@
+@import '../sass/screen-size';
+@import '../sass/variables';
+@import '../sass/typography';
+@import '../sass/layout';
+
+.main-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include page-spacing();
+    padding: $spacing-xl 0 $spacing-xl $spacing-s;
+
+    @include breakpoint(tablet-up) {
+        flex-direction: row;
+    }
+
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-grow: 1;
+        margin-right: $spacing-s;
+
+        @include breakpoint(tablet-up) {
+            margin: $spacing-l;
+            flex-basis: 60%;
+        }
+
+        @include breakpoint(tablet-landscape-up) {
+            margin: $spacing-xxl;
+            flex-basis: 40%;
+        }
+    }
+    .headline {
+        @include headline-01;
+        color: $dark-headline-color;
+        margin-bottom: $spacing-s;
+
+        &-yellow {
+            color: $yellow;
+        }
+        &-subtitle {
+            @include headline-02;
+            color: $dark-content-color;
+        }
+    }
+    .action-buttons {
+        display: flex;
+        margin-top: $spacing-s;
+        margin-bottom: $spacing-l;
+        max-width: 600px;
+
+        @include breakpoint(mobile-only) {
+            flex-direction: column;
+            a {
+                margin-bottom: $spacing-xs;
+                margin-left: 0;
+            }
+        }
+        @include breakpoint (tablet-mobile-up){
+
+            a {
+                margin-left: $spacing-xs;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    .image {
+        flex-grow: 0;
+        max-width: 800px;
+
+        align-self: end;
+        img {
+            width: 100%;
+        }
+        min-width: 100%;
+        @include breakpoint(mobile-tablet-up) {
+            flex-basis: 40%;
+        }
+        @include breakpoint(tablet-up) {
+            flex-basis: 50%;
+            min-width: 0;
+        }
+        @include breakpoint(desktop-up) {
+            max-height: 80vh;
+        }
+    }
+}

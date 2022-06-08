@@ -1,0 +1,107 @@
+@import '../sass/screen-size';
+@import '../sass/variables';
+@import '../sass/typography';
+
+.button-primary {
+    @include body-02;
+    text-decoration: none;
+
+    color: $gray-01;
+    background-color: $yellow;
+
+    padding: $spacing-xxs $spacing-xs;
+    border-radius: 5px;
+    transition: all ease-in 0.1s;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        color: $gray-01;
+        text-decoration: none;
+        background-color: $yellow-dark;
+        box-shadow: 0px 1px 10px rgba(120, 113, 46, 0.12), 0px 4px 5px rgba(171, 165, 100, 0.15), 0px 2px 4px rgba(133, 126, 60, 0.2);
+    }
+    &:active {
+        background: linear-gradient(223.89deg, #EDD800 0.34%, #FCF078 104.44%);
+        box-shadow: 0px 5px 5px rgba(120, 118, 58, 0.2), 0px 8px 10px rgba(120, 118, 58, 0.13), 0px 30px 30px rgba(126, 120, 50, 0.12);
+    }
+
+}
+
+.button-secondary {
+    @include body-02;
+    text-decoration: none;
+
+    color: $gray-02;
+    padding: $spacing-xxs $spacing-xs;
+
+    border: 1px solid $yellow-dark;
+    border-radius: 5px;
+    transition: all ease-in 0.1s;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:hover {
+        color: $gray-02;
+        text-decoration: none;
+        background-color: $gray-07-15;
+    }
+    &:active {
+        background-color: $yellow-light-25;
+    }
+}
+
+.button-text {
+    @include body-02;
+    text-decoration: none;
+
+    color: $gray-02;
+    background-color: transparent;
+    padding: $spacing-xxs $spacing-xs;
+
+    border-radius: 5px;
+    border: none;
+    transition: all ease-in 0.1s;
+    cursor: pointer;
+    white-space: nowrap;
+    text-align: center;
+
+    text-align: center;
+
+    &:hover {
+        color: $gray-02;
+        text-decoration: none;
+        background-color: $gray-07-15;
+    }
+    &:active {
+        background-color: $yellow-light-25;
+    }
+}
+
+.button-delete {
+    @include body-02-bold;
+    text-decoration: none;
+
+    color: $white;
+    background-color: $error-color;
+
+    padding: $spacing-xxs $spacing-xs;
+    border-radius: 5px;
+    transition: all ease-in 0.1s;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        color: $white;
+        text-decoration: none;
+        background-color: #830404;
+        box-shadow: 0px 1px 10px rgba(120, 113, 46, 0.12), 0px 4px 5px rgba(171, 165, 100, 0.15), 0px 2px 4px rgba(133, 126, 60, 0.2);
+    }
+    &:active {
+        background-color: #830404;
+        box-shadow: 0px 5px 5px rgba(120, 118, 58, 0.2), 0px 8px 10px rgba(120, 118, 58, 0.13), 0px 30px 30px rgba(126, 120, 50, 0.12);
+    }
+}

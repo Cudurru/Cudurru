@@ -1,0 +1,36 @@
+@import '../../sass/screen-size';
+@import '../../sass/variables';
+@import '../../sass/typography';
+
+.filter-dropdown {
+    position: absolute;
+    top: 46px; //Button height + 4px
+    left: 0;
+
+    background-color: $light-background-color;
+    border-radius: 5px;
+    padding: $spacing-xs;
+    box-shadow: 0px 0px 30px 2px rgba(133, 130, 130, 0.15);
+    z-index: 15;
+    @include breakpoint(desktop-up) {
+        right: 0;
+        left: auto;
+    }
+    .dropdown-inputs {
+        display: flex;
+        flex-direction: row;
+
+        input {
+            margin: 0 $spacing-xxxs;
+            width: 80px;
+        }
+    }
+    .action-buttons {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            margin: $spacing-xxxs;
+        }
+    }
+}

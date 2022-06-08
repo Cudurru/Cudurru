@@ -1,0 +1,91 @@
+---
+- name: Install python dependencies
+  pip:
+    requirements: '{{ services_dir }}/requirements.txt'
+  ignore_errors: yes
+
+- name: Set up environment variables
+  template:
+    src: templates/local_settings.py.j2
+    dest: '{{ services_dir }}/prelude/local_settings.py'
+
+- name: Set postgres to trust mode for local dev
+  postgresql_pg_hba:
+    dest: /etc/postgresql/10/main/pg_hba.conf
+    contype: host
+    method: trust
+    address: 127.0.0.1/32
+    create: yes
+  become: yes
+  become_user: postgres
+
+- name: Create postgres db {{ postgres_db_name }}
+  postgresql_db:
+    name: '{{ postgres_db_name }}'
+    encoding: UTF-8
+  become_user: postgres
+  become: yes
+
+- name: Create postgres user
+  postgresql_user:
+    db: '{{ postgres_db_name }}'
+    name: '{{ postgres_user }}'
+    password: '{{ postgres_password }}'
+    priv: 'ALL'
+  become_user: postgres
+  become: yes
+
+- name: Adds postgis extension to the database 
+  community.general.postgresql_ext:
+    name: postgis
+    db: '{{ postgres_db_name }}'
+    login_user: postgres 
+    login_password: '{{ postgres_password }}'
+  become_user: postgres
+  become: yes
+
+- name: Set up alembic config
+  template:
+    src: templates/alembic.ini.j2
+    dest: '{{ services_dir }}/alembic.ini'
+
+- name: Run alembic migrations
+  shell: ~/.local/bin/alembic upgrade head
+  args:
+    executable: /bin/bash
+    chdir: '{{ services_dir }}'
+
+- name: Install prelude package from source
+  shell: pip3 install .
+  args:
+    executable: /bin/bash
+    chdir: '{{ services_dir }}'
+
+- name: Setup cudurru.test alias
+  lineinfile:
+    path: /etc/hosts
+    regexp: ^127.0.0.1
+    line: 127.0.0.1      localhost cudurru.test
+  become: yes
+  become_user: root
+
+- name: Installing cudurru service config
+  template:
+    src: 'cudurru.service.j2'
+    dest: '/etc/systemd/system/cudurru.service'
+  become: yes
+  become_user: root
+
+- name: Reload systemd daemon
+  systemd:
+    daemon_reload: yes
+  become: yes
+  become_user: root
+
+- name: Starting cudurru
+  service:
+    name: cudurru
+    enabled: yes
+    state: restarted
+  become: yes
+  become_user: root

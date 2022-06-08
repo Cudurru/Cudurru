@@ -1,0 +1,41 @@
+@import '../sass/screen-size';
+@import '../sass/variables';
+@import '../sass/typography';
+@import '../sass/layout';
+
+.login {
+    @include page-spacing();
+    color: $gray-02;
+
+
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            @include body-02;
+            margin-top: $spacing-s;
+        }
+
+        .inline-link {
+            font-weight: 600;
+            color: $gray-01;
+            &:hover {
+                background-color: $yellow;
+            }
+        }
+    }
+    &-title {
+        @include headline-03;
+    }
+    .action-buttons {
+        button {
+            margin-left: $spacing-s;
+            &:first-child {
+                margin:0;
+            }
+        }
+    }
+}

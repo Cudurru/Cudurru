@@ -1,0 +1,67 @@
+@import '../../sass/screen-size';
+@import '../../sass/variables';
+@import '../../sass/typography';
+
+.listing-data-section {
+  position: relative;
+  padding: $spacing-xs;
+
+  background-color: $gray-09;
+  color: $gray-02;
+  border-radius: 5px;
+  margin-bottom: $spacing-xs;
+
+  .listing-title {
+    @include body-01;
+    margin-bottom: $spacing-xs;
+  }
+
+  .edit-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: $spacing-xs;
+
+    @include body-02-bold;
+    color: $gray-02;
+
+    &:hover,
+    &:active {
+      color: $yellow-dark;
+    }
+  }
+
+  .listing-data {
+    @include body-03;
+    color: $gray-03;
+    font-weight: 400;
+    word-break: break-word;
+
+    div {
+      @include body-02;
+      color: $gray-02;
+      margin-bottom: $spacing-xxs;
+    }
+  }
+
+  .review-photos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: $spacing-s;
+
+    img {
+      max-height: 500px;
+      max-width: 100%;
+      margin-top: $spacing-xs;
+
+      box-shadow: 0px 1px 10px rgba(120, 113, 46, 0.12),
+                  0px 4px 5px rgba(171, 165, 100, 0.15),
+                  0px 2px 4px rgba(133, 126, 60, 0.2);
+
+    }
+    .will-be-deleted {
+      border: 2px solid $error-color;
+    }
+  }
+}

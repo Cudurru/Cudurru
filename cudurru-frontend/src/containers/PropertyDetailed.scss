@@ -1,0 +1,134 @@
+@import '../sass/screen-size';
+@import '../sass/variables';
+@import '../sass/typography';
+@import '../sass/layout';
+
+.property-page {
+    @include page-spacing();
+
+    .property-details {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+
+        max-width: 1000px;
+    }
+    .edit-button {
+        align-self: flex-end;
+        margin-bottom: $spacing-xs;
+    }
+    .header-container {
+        padding: $spacing-s;
+        border-radius: 5px;
+        background-color: $gray-08;
+        margin-bottom: $spacing-s;
+    }
+    .header-location {
+        @include headline-03;
+        margin-bottom: $spacing-xxs;
+        word-break: break-word;
+    }
+    .carousel-item {
+        width: 100%;
+        height: 40vh;
+        overflow: hidden;
+        align-self: center;
+        text-align: center;
+        border-radius: 5px;
+
+        @include breakpoint(tablet-landscape-up) {
+            height: 50vh;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .carousel-control-next:focus,
+    .carousel-control-next:hover,
+    .carousel-control-prev:focus,
+    .carousel-control-prev:hover {
+        background-color: rgba(48, 57, 62, 0.5);
+    }
+    .header-footer {
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint(tablet-mobile-up) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @include headline-02;
+        &-value {
+            margin-top: $spacing-xs;
+        }
+        &-rooms {
+            display: flex;
+            flex-direction: column;
+            margin-top: $spacing-xs;
+
+            @include body-02;
+            color: $gray-02;
+
+            @include breakpoint(tablet-up) {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            img {
+                margin-right: $spacing-xxs;
+                width: 20px;
+                height: 20px;
+            }
+        }
+        &-item {
+            display: flex;
+
+            margin-bottom: $spacing-xs;
+            @include breakpoint(tablet-up) {
+                justify-content: center;
+                margin: 0 0 0 $spacing-xs;
+            }
+        }
+    }
+    .property-additional-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        button {
+            align-self: flex-start;
+            margin-bottom: 16px;
+        }
+    }
+    .property-description {
+        display: flex;
+        flex-direction: column;
+
+        max-width: 600px;
+        &-item {
+            margin-bottom: $spacing-xs;
+        }
+        label {
+            @include body-01;
+            color: $gray-01;
+            margin-bottom: $spacing-xxs;
+        }
+        &--description,
+        &--legal-description {
+            @include body-02;
+            color: $gray-02;
+            margin-bottom: $spacing-xxs;
+            word-break: break-word;
+        }
+        button {
+            align-self: flex-end;
+        }
+    }
+}
+.error-page{
+    margin-top: 80px;
+}

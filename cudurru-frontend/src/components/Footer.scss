@@ -1,0 +1,70 @@
+@import '../sass/screen-size';
+@import '../sass/variables';
+@import '../sass/typography';
+
+.footer-inner {
+    background-color: $dark-background-color;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-s;
+
+    @include breakpoint(tablet-landscape-up) {
+        padding: 0 $spacing-s;
+
+        flex-direction: row;
+    }
+
+    .copyright,
+    .links {
+        @include body-03;
+        color: $white;
+
+        text-decoration: none;
+    }
+    .copyright {
+        @include breakpoint (mobile-only) {
+            margin-top: $spacing-xxs;
+        }
+    }
+    .links {
+        @include breakpoint (mobile-only) {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .link {
+        @include breakpoint (mobile-only) {
+            margin: $spacing-xxs 0;
+        }
+        color: $white;
+        margin: 0 $spacing-m 0 0;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    .link-email {
+        @include body-01;
+        color: $yellow-light;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .social-media {
+        img {
+            height: 25px;
+            margin: $spacing-xs;
+
+            @include breakpoint(tablet-landscape-up) {
+                height: 30px;
+                margin: $spacing-s $spacing-xs;
+            }
+        }
+    }
+
+}

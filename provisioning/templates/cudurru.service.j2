@@ -1,0 +1,12 @@
+[Unit]
+Description=Cudurru Service
+After=network.target
+
+[Service]
+User={{ deploy_user }}
+Restart=always
+WorkingDirectory=/opt/cudurru-services
+ExecStart=/opt/cudurru-services/start.sh
+
+[Install]
+WantedBy=multi-user.target

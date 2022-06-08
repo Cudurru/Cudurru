@@ -1,0 +1,50 @@
+@import '../../sass/screen-size';
+@import '../../sass/variables';
+@import '../../sass/typography';
+
+.upload-photos {
+  display: flex;
+  flex-direction: column;
+}
+.total-uploaded {
+  @include body-01;
+  margin: $spacing-xs auto;
+}
+.get-started-wrapper {
+  .alert{
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+  }
+}
+.uploaded-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: $spacing-s;
+  background-color: $gray-09;
+  margin-bottom: $spacing-s;
+  border-radius: 5px;
+
+  img {
+    max-height: 500px;
+    max-width: 100%;
+    margin-bottom: $spacing-xs;
+
+    box-shadow: 0px 1px 10px rgba(120, 113, 46, 0.12),
+                0px 4px 5px rgba(171, 165, 100, 0.15),
+                0px 2px 4px rgba(133, 126, 60, 0.2);
+
+  }
+  .input {
+    width: 100%;
+  }
+  button:focus{
+    outline: none;
+  }
+}
+.deleted-photo{
+  border: 1px solid $error-color;
+}

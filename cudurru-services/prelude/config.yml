@@ -1,0 +1,288 @@
+User: 
+    fields:
+        username:
+            required: yes
+            minimum_length: 3
+            maximum_length: 16
+        email:
+            required: yes
+            maximum_length: 40
+            type: email
+        password:
+            required: yes
+            minimum_length: 8
+            maximum_length: 64
+
+Login:
+    fields:
+        email:
+            required: yes
+        password:
+            required: yes
+Properties:
+    post_fields:
+        legalDescription:
+            required: yes
+            minimum_length: 25
+            maximum_length: 1000
+            snail_version: legal_description
+        askingPrice:
+            required: yes 
+            snail_version: asking_price
+        lotSize:
+            required: no 
+            snail_version: lot_size
+        yearBuilt:
+            required: no 
+            snail_version: year_built
+        postalCode:
+            required: no 
+            snail_version: postal_code
+        latitude:
+            required: no 
+            snail_version: latitude
+        longitude:
+            required: no 
+            snail_version: longitude
+        description:
+            required: yes
+            minimum_length: 25
+            maximum_length: 2000
+            snail_version: description
+        squareFootage:
+            required: no
+            snail_version: square_footage
+        bedroomCount:
+            required: no
+            snail_version: bedroom_count
+        bathroomCount:
+            required: no
+            snail_version: bathroom_count
+        address1:
+            required: no
+            required: yes
+            snail_version: address1
+        address2:
+            required: no
+            snail_version: address2
+        state:
+            required: no
+            snail_version: state
+        city:
+            required: no
+            snail_version: city
+    put_fields:
+        legalDescription:
+            required: no 
+            minimum_length: 25
+            maximum_length: 1000
+            snail_version: legal_description
+        description:
+            required: no
+            minimum_length: 25
+            maximum_length: 2000
+            snail_version: description
+        lotSize:
+            required: no 
+            snail_version: lot_size
+        yearBuilt:
+            required: no 
+            snail_version: year_built
+        askingPrice:
+            required: no 
+            snail_version: asking_price
+        postalCode:
+            required: no 
+            snail_version: postal_code
+        latitude:
+            required: no 
+            snail_version: latitude
+        longitude:
+            required: no 
+            snail_version: longitude
+        squareFootage:
+            required: no
+            snail_version: square_footage
+        bedroomCount:
+            required: no
+            snail_version: bedroom_count
+        bathroomCount:
+            required: no
+            snail_version: bathroom_count
+        address1:
+            required: no
+            snail_version: address1
+        address2:
+            required: no
+            snail_version: address2
+        state:
+            required: no
+            snail_version: state
+        city:
+            required: no
+            snail_version: city
+    get_query_order_by_fields:
+        listedDate:
+            snail_version: created_date
+        askingPrice:
+            snail_version: asking_price
+    get_query_return_fields:
+        listedDate:
+            snail_version: created_date
+        yearBuilt:
+            snail_version: year_built
+        legalDescription:
+            snail_version: legal_description
+        lotSize:
+            snail_version: lot_size
+        askingPrice:
+            snail_version: asking_price
+        latitude:
+            snail_version: latitude
+        longitude:
+            snail_version: longitude
+        postalCode:
+            snail_version: postal_code
+        uuid:
+            snail_version: uuid
+        description:
+            snail_version: description
+        squareFootage:
+            snail_version: square_footage
+        bedroomCount:
+            snail_version: bedroom_count
+        bathroomCount:
+            snail_version: bathroom_count
+        address1:
+            snail_version: address1
+        address2:
+            snail_version: address2
+        state:
+            snail_version: state
+        city:
+            snail_version: city
+    get_query_filter_fields:
+        squareFootage:
+            required: no
+            filter_type: simple
+            snail_version: square_footage
+            value_type: int
+            operators:
+              - ge
+              - le
+              - lt
+              - gt
+              - eq
+              - range
+        bedroomCount:
+            required: no
+            filter_type: simple
+            snail_version: bedroom_count
+            value_type: int
+            operators:
+              - ge
+              - le
+              - lt
+              - gt
+              - eq
+              - range
+        bathroomCount:
+            required: no
+            filter_type: simple
+            snail_version: bathroom_count
+            value_type: float
+            operators:
+              - ge
+              - le
+              - lt
+              - gt
+              - eq
+              - range
+        yearBuilt:
+            required: no
+            filter_type: simple
+            snail_version: year_built
+            value_type: int
+            operators:
+              - ge
+              - le
+              - lt
+              - gt
+              - eq
+              - range
+        askingPrice:
+            required: no
+            snail_version: asking_price
+            filter_type: simple
+            value_type: int
+            operators:
+              - ge
+              - le
+              - lt
+              - gt
+              - eq
+              - range
+        geo:
+            required: no
+            snail_version: geo 
+            filter_type: 
+                specialty: distance 
+            value_type: int
+            parameter_order:
+              - field_name
+              - longitude
+              - latitude
+              - radius # in meters
+            operators:
+              - le
+GeneralInfo:
+    SqlInfo:
+        operators:
+            ge: __ge__
+            gt: __gt__
+            le: __le__
+            lt: __lt__
+            eq: __eq__
+        order_by:
+            required: no
+            field_name: askingPrice
+            method: asc
+        pagination:
+            required: no
+            page: 0
+            per_page: 27
+CrudTables:
+    Registration:
+        API_Info:
+            path: registration
+            handler: Registration
+    Login:
+        API_Info:
+            path: login
+            handler: Login
+    Users:
+        Columns:
+            - username
+            - email
+            - password
+        API_Info:
+            path: /users
+            name: users
+            handler: users
+        SQLInfo:
+        TableInfo:
+        BlockInfo:
+        UXInfo:
+            username:
+                label: Name
+                required: yes
+                type: text
+            email:
+                label: Email
+                required: yes
+                type: text 
+            password:
+                label: Password 
+                required: yes
+                type: password
+

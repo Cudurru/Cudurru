@@ -1,0 +1,86 @@
+@import './screen-size';
+
+$baseFontSize: 16px;
+
+@function pxToRem($size) {
+  $remSize: $size / $baseFontSize;
+  @return #{$remSize}rem;
+}
+
+@mixin montserrat-family {
+  font-family: 'Montserrat', sans-serif;
+}
+@mixin opensans-family {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@mixin headline-01 {
+  @include montserrat-family();
+
+  font-size: pxToRem(32px);
+  font-weight: 600;
+
+  line-height: 130%;
+  letter-spacing: -1%;
+
+  @include breakpoint(tablet-mobile-up) {
+    font-size: pxToRem(48px);
+  }
+}
+
+@mixin headline-02 {
+  @include montserrat-family();
+
+  font-size: pxToRem(24px);
+  font-weight: 600;
+
+  line-height: 130%;
+
+  @include breakpoint(tablet-mobile-up) {
+    font-size: pxToRem(30px);
+  }
+}
+
+@mixin headline-03 {
+  @include montserrat-family();
+
+  font-size: pxToRem(20px);
+  font-weight: 600;
+
+  line-height: 130%;
+
+  @include breakpoint(tablet-mobile-up) {
+    font-size: pxToRem(24px);
+  }
+}
+
+@mixin body-01 {
+  @include opensans-family();
+
+  font-size: pxToRem(18px);
+  font-weight: 600;
+
+  line-height: 150%;
+}
+
+@mixin body-02 {
+  @include opensans-family();
+
+  font-size: pxToRem(16px);
+  font-weight: 400;
+
+  line-height: 150%;
+}
+
+@mixin body-02-bold {
+  @include body-02;
+  font-weight: 600;
+}
+
+@mixin body-03 {
+  @include opensans-family();
+  font-size: pxToRem(14px);
+  font-weight: 600;
+
+  line-height: 150%;
+}

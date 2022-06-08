@@ -1,0 +1,16 @@
+---
+- name: Install app dependencies
+  yarn:
+    path: '{{ frontend_dir }}'
+    state: latest
+
+- name: Inject frontend environment variables
+  template:
+    src: vars.js.j2
+    dest: '{{ frontend_dir }}/src/vars.js'
+
+- name: Build frontend code
+  shell: yarn build
+  args:
+    chdir: '{{ frontend_dir }}'
+    executable: /bin/bash

@@ -1,0 +1,39 @@
+$breakpoints: (
+  max: (
+    mobile-only: 576px
+  ),
+  min: (
+    tablet-mobile-up: 577px,
+    tablet-up: 768px,
+    tablet-landscape-up: 992px,
+    desktop-up: 1200px,
+  )
+);
+
+@mixin breakpoint($breakpoint, $break: null) {
+  @if $break != null {
+    $mediaVal: $breakpoint;
+
+    @each $type, $value in $breakpoints {
+      @if map-has-key($value, $breakpoint) {
+        $mediaVal: map-get($value, $breakpoint);
+      }
+    }
+
+    @media screen and (#{$break}-width: #{$mediaVal}) {
+      @content;
+    }
+  } @else {
+    @each $type, $value in $breakpoints {
+      @if map-has-key($value, $breakpoint) {
+        @media screen and (#{$type}-width: #{map-get($value, $breakpoint)}) {
+          @content;
+        }
+      }
+    }
+  }
+}
+
+@mixin mobile-landscape-only {
+  @media (orientation: landscape) and (max-height: 599px) and (max-width: 899px) { @content; }
+}

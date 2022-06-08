@@ -1,0 +1,73 @@
+@import '../../sass/screen-size';
+@import '../../sass/variables';
+@import '../../sass/typography';
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: $spacing-s;
+
+    background-color: $gray-09;
+
+    @include breakpoint (desktop-up) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .filters-location {
+        display: flex;
+        @include breakpoint(mobile-only) {
+            flex-direction: column;
+        }
+
+        input[type=number] {
+            max-width: 70px;
+        }
+        .text-input {
+            margin-right: $spacing-xxs;
+            @include breakpoint(mobile-only) {
+                min-width: 270px;
+            }
+        }
+    }
+
+    .filters-characteristics {
+        &--mobile {
+            display: block;
+            @include breakpoint(tablet-landscape-up) {
+                display: none;
+            }
+            .filters-characteristics--content {
+                margin-top: $spacing-s;
+            }
+        }
+        &--desktop {
+            display: none;
+            @include breakpoint(tablet-landscape-up){
+                display: block;
+            }
+        }
+        &--content{
+            display: flex;
+            flex-direction: column;
+
+            @include breakpoint(tablet-landscape-up) {
+                flex-direction: row;
+            }
+
+            .filter {
+                position: relative;
+                margin-right: $spacing-xxs;
+                margin-bottom: $spacing-xxs;
+
+                width: 50%;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

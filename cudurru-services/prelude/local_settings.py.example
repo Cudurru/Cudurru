@@ -1,0 +1,4 @@
+"""
+local settings, file is created unique ot each env
+"""
+SQLALCHEMY_DATABASE_URI = "postgresql://portal:test101@localhost:5432/overture"

@@ -1,0 +1,28 @@
+@import '../../sass/layout';
+@import '../../sass/screen-size';
+@import '../../sass/variables';
+@import '../../sass/typography';
+
+.submit-data {
+  @include page-spacing();
+  display: flex;
+  justify-content: center;
+
+  .content {
+    margin-top: $spacing-m;
+    max-width: 450px;
+
+    display: flex;
+    flex-direction: column;
+  }
+  .headline {
+    @include headline-03;
+  }
+  .subtitle {
+    @include body-02;
+  }
+  .action {
+    margin-top: $spacing-xs;
+    align-self: flex-end;
+  }
+}

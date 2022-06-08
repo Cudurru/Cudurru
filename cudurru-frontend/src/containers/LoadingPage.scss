@@ -1,0 +1,18 @@
+@import '../sass/screen-size';
+@import '../sass/variables';
+@import '../sass/typography';
+@import '../sass/layout';
+
+.loading-page {
+    @include page-spacing();
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        @include headline-03;
+        margin-bottom: $spacing-m;
+    }
+}

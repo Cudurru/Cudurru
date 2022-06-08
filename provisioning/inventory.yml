@@ -1,0 +1,25 @@
+---
+all:
+  children:
+    cudurru:
+      children:
+        dev:
+        test:
+    do:
+      hosts:
+        cudurru-test-do-nyc3:
+    dev:
+      hosts:
+        default:
+          ansible_host: 10.60.0.2
+          ansible_user: vagrant
+          ansible_ssh_private_key_file: .vagrant/machines/default/virtualbox/private_key
+          src_path: /vagrant
+          server_name: cudurru.test
+    test:
+      hosts:
+        cudurru-test-do-nyc3:
+          ansible_host: 104.131.34.95
+          ansible_user: root
+          src_path: "."
+          server_name: test.cudurru.io

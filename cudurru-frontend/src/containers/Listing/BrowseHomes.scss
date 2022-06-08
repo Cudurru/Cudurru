@@ -1,0 +1,10 @@
+@import '../../sass/screen-size';
+@import '../../sass/variables';
+@import '../../sass/layout';
+
+.browse-homes-content{
+    @include page-spacing();
+    padding: 0;
+
+    position: relative;
+}

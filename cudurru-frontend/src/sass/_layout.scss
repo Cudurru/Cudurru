@@ -1,0 +1,13 @@
+@mixin page-spacing() {
+  min-height: calc(100vh - #{$footer-mobile-height} - #{$header-desktop-height});
+  margin-top: $header-desktop-height;
+  padding: $spacing-xl $spacing-s;
+  background-color: $light-background-color;
+
+  @include breakpoint(tablet-mobile-up) {
+    min-height: calc(100vh - #{$footer-tablet-height}  - #{$header-desktop-height});
+  }
+  @include breakpoint(tablet-landscape-up) {
+    min-height: calc(100vh - #{$footer-desktop-height} - #{$header-desktop-height});
+  }
+}

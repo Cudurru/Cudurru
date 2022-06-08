@@ -1,0 +1,537 @@
+origin_point:
+  latitude: -30.032839
+  longitude: -51.231214
+filter_args:
+  - filters:
+    - "geo:-51.231214:-30.032839:4716"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 1
+    simple_number: 0
+    range_number: 0
+    expected_results: 9
+  - filters:
+    - "geo:-51.231214:-30.032839:253000"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 1
+    simple_number: 0
+    range_number: 0
+    expected_results: 18
+  - filters:
+    - "geo:-51.231214:-30.032839:845000"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 1
+    simple_number: 0
+    range_number: 0
+    expected_results: 27
+  - filters:
+    - "askingPrice:range:999:1500"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 0
+    range_number: 1
+    expected_results: 9
+  - filters:
+    - "askingPrice:range:999:3500"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 0
+    range_number: 1
+    expected_results: 18
+  - filters:
+    - "askingPrice:range:999:5500"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 0
+    range_number: 1
+    expected_results: 27
+  - filters:
+    - "yearBuilt:range:1985:1985"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 0
+    range_number: 1
+    expected_results: 9
+  - filters:
+    - "yearBuilt:range:1984:1985"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 0
+    range_number: 1
+    expected_results: 18
+  - filters:
+    - "yearBuilt:range:1984:1986"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 0
+    range_number: 1
+    expected_results: 27 
+  - filters:
+    - "yearBuilt:eq:1985"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 1
+    range_number: 0
+    expected_results: 9 
+  - filters:
+    - "yearBuilt:lt:1985"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 1
+    range_number: 0
+    expected_results: 9 
+  - filters:
+    - "yearBuilt:gt:1985"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 1
+    range_number: 0
+    expected_results: 9 
+  - filters:
+    - "yearBuilt:le:1985"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 1
+    range_number: 0
+    expected_results: 18 
+  - filters:
+    - "yearBuilt:ge:1985"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 1
+    range_number: 0
+    expected_results: 18 
+  - filters:
+    - "askingPrice:eq:2500"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 1
+    range_number: 0
+    expected_results: 9 
+  - filters:
+    - "askingPrice:lt:2500"
+    pagination: "2:2"
+    page: 2
+    per_page: 2
+    specialty_number: 0
+    simple_number: 1
+    range_number: 0
+    expected_paginated_results: 2
+    expected_results: 9 
+  - filters:
+    - "askingPrice:gt:2500"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 1
+    range_number: 0
+    expected_results: 9 
+  - filters:
+    - "askingPrice:le:2500"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 1
+    range_number: 0
+    expected_results: 18 
+  - filters:
+    - "askingPrice:ge:2500"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 1
+    range_number: 0
+    expected_results: 18 
+  - filters:
+    - "askingPrice:eq:2500"
+    - "yearBuilt:eq:1985"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 2
+    range_number: 0
+    expected_results: 3 
+  - filters:
+    - "askingPrice:gt:2500"
+    - "yearBuilt:gt:1985"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 2
+    range_number: 0
+    expected_results: 3 
+  - filters:
+    - "askingPrice:lt:2500"
+    - "yearBuilt:lt:1985"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 2
+    range_number: 0
+    expected_results: 3 
+  - filters:
+    - "askingPrice:ge:2500"
+    - "yearBuilt:ge:1985"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 2
+    range_number: 0
+    expected_results: 12 
+  - filters:
+    - "askingPrice:le:2500"
+    - "yearBuilt:le:1985"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 2
+    range_number: 0
+    expected_results: 12 
+  - filters:
+    - "askingPrice:range:1000:2500"
+    - "yearBuilt:range:1984:1985"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 0
+    range_number: 2
+    expected_results: 12 
+  - filters:
+    - "askingPrice:range:1000:5000"
+    - "yearBuilt:range:1984:1985"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 0
+    range_number: 2
+    expected_results: 18 
+  - filters:
+    - "askingPrice:eq:2500"
+    - "yearBuilt:eq:1985"
+    - "geo:-51.231214:-30.032839:4716"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 1
+    simple_number: 2
+    range_number: 0
+    expected_results: 1 
+  - filters:
+    - "askingPrice:range:2400:5500"
+    - "yearBuilt:ge:1985"
+    - "geo:-51.231214:-30.032839:255000"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 1
+    simple_number: 1
+    range_number: 1
+    expected_results: 8 
+  - filters:
+    - "askingPrice:range:400:5500"
+    - "yearBuilt:ge:1983"
+    - "geo:-51.231214:-30.032839:955000"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 1
+    simple_number: 1
+    range_number: 1
+    expected_results: 27 
+  - filters:
+    - "bathroomCount:ge:4"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 1
+    range_number: 0
+    expected_results: 6 
+  - filters:
+    - "bathroomCount:ge:4"
+    - "bedroomCount:le:2"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 2
+    range_number: 0
+    expected_results: 4 
+  - filters:
+    - "bathroomCount:ge:1"
+    - "bedroomCount:le:10"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 2
+    range_number: 0
+    expected_results: 9 
+  - filters:
+    - "bedroomCount:range:1:10"
+    - "bathroomCount:range:3.5:4.5"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 0
+    range_number: 2
+    expected_results: 9 
+  - filters:
+    - "squareFootage:range:10:11000"
+    pagination: "0:27"
+    page: 0
+    per_page: 27
+    specialty_number: 0
+    simple_number: 0
+    range_number: 1
+    expected_results: 3 
+properties_args:
+  - legalDescription: >-
+      "House that has 10000 square foot"
+    squareFootage: 10000
+  - legalDescription: >-
+      "House that has 100 square foot"
+    squareFootage: 100
+  - legalDescription: >-
+      "House that has 1000 square foot"
+    squareFootage: 1000
+  - legalDescription: >-
+      "House that has 3.5 bathrooms 1 bedroom"
+    bathroomCount: 3.5
+    bedroomCount: 1
+  - legalDescription: >-
+      "House that has 3.5 bathrooms 2 bedrooms"
+    bathroomCount: 3.5
+    bedroomCount: 2
+  - legalDescription: >-
+      "House that has 3.5 bathrooms 3 bedrooms"
+    bathroomCount: 3.5
+    bedroomCount: 3
+  - legalDescription: >-
+      "House that has 4.5 bathrooms 1 bedroom"
+    bathroomCount: 4.5
+    bedroomCount: 1
+  - legalDescription: >-
+      "House that has 4.5 bathrooms 2 bedrooms"
+    bathroomCount: 4.5
+    bedroomCount: 2
+  - legalDescription: >-
+      "House that has 4.5 bathrooms 3 bedrooms"
+    bathroomCount: 4.5
+    bedroomCount: 3
+  - legalDescription: >-
+      "House that has 4 bathrooms, 2 bedrooms"
+    bathroomCount: 4
+    bedroomCount: 2
+  - legalDescription: >-
+      "House that has 4 bathrooms 1 bedroom"
+    bathroomCount: 4
+    bedroomCount: 1
+  - legalDescription: >-
+      "House that has 4 bathrooms 3 bedrooms"
+    bathroomCount: 4
+    bedroomCount: 3
+  - legalDescription: >- 
+      "House that is 4716 meters away from origin_point, That was built on 85 and costs 1000"
+    latitude: -30.014706
+    longitude: -51.186935
+    yearBuilt: 1985
+    askingPrice: 1000
+  - legalDescription: >-
+      "House that is 4716 meters away from origin_point, That was built on 85 and costs 2500"
+    latitude: -30.014706
+    longitude: -51.186935
+    yearBuilt: 1985
+    askingPrice: 2500
+  - legalDescription: >-
+      "House that is 4716 meters away from origin_point, That was built on 85 and costs 5000"
+    latitude: -30.014706
+    longitude: -51.186935
+    yearBuilt: 1985
+    askingPrice: 5000
+  - legalDescription: >-
+      "House that is 4716 meters away from origin_point, That was built after 85 and costs 1000"
+    latitude: -30.014706
+    longitude: -51.186935
+    yearBuilt: 1986
+    askingPrice: 1000
+  - legalDescription: >-
+      "House that is 4716 meters away from origin_point, That was built after 85 and costs 2500"
+    latitude: -30.014706
+    longitude: -51.186935
+    yearBuilt: 1986
+    askingPrice: 2500
+  - legalDescription: >-
+      "House that is 4716 meters away from origin_point, That was built after 85 and costs 5000"
+    latitude: -30.014706
+    longitude: -51.186935
+    yearBuilt: 1986
+    askingPrice: 5000
+  - legalDescription: >-
+      "House that is 4716 meters away from origin_point, That was built before 85 and costs 1000"
+    latitude: -30.014706
+    longitude: -51.186935
+    yearBuilt: 1984
+    askingPrice: 1000
+  - legalDescription: >- 
+      "House that is 4716 meters away from origin_point, That was built before 85 and costs 2500"
+    latitude: -30.014706
+    longitude: -51.186935
+    yearBuilt: 1984
+    askingPrice: 2500
+  - legalDescription: >-
+      "House that is 4716 meters away from origin_point, That was built before 85 and costs 5000"
+    latitude: -30.014706
+    longitude: -51.186935
+    yearBuilt: 1984
+    askingPrice: 5000
+  - legalDescription: >-
+      "House that is 252 kilometers away from origin_point, built on 85 and costs 1000"
+    latitude: -29.687009
+    longitude: -53.809743
+    yearBuilt: 1985
+    askingPrice: 1000
+  - legalDescription: >-
+      "House that is 252 kilometers away from origin_point, built on 85 and costs 2500"
+    latitude: -29.687009
+    longitude: -53.809743
+    yearBuilt: 1985
+    askingPrice: 2500
+  - legalDescription: >-
+      "House that is 252 kilometers away from origin_point, built on 85 and costs 5000"
+    latitude: -29.687009
+    longitude: -53.809743
+    yearBuilt: 1985
+    askingPrice: 5000
+  - legalDescription: >-
+      "House that is 252 kilometers away from origin_point, built after 85 and costs 1000"
+    latitude: -29.687009
+    longitude: -53.809743
+    yearBuilt: 1986
+    askingPrice: 1000
+  - legalDescription: >-
+      "House that is 252 kilometers away from origin_point, built after 85 and costs 2500"
+    latitude: -29.687009
+    longitude: -53.809743
+    yearBuilt: 1986
+    askingPrice: 2500
+  - legalDescription: >-
+      "House that is 252 kilometers away from origin_point, built after 85 and costs 5000"
+    latitude: -29.687009
+    longitude: -53.809743
+    yearBuilt: 1986
+    askingPrice: 5000
+  - legalDescription: >-
+      "House that is 252 kilometers away from origin_point, built before 85 and costs 1000"
+    latitude: -29.687009
+    longitude: -53.809743
+    yearBuilt: 1984
+    askingPrice: 1000
+  - legalDescription: >-
+      "House that is 252 kilometers away from origin_point, built before 85 and costs 2500"
+    latitude: -29.687009
+    longitude: -53.809743
+    yearBuilt: 1984
+    askingPrice: 2500
+  - legalDescription: >-
+      "House that is 252 kilometers away from origin_point, built before 85 and costs 5000"
+    latitude: -29.687009
+    longitude: -53.809743
+    yearBuilt: 1984
+    askingPrice: 5000
+  - legalDescription: >-
+      "House that is 844 kilometers away from origin_point, built on 85 and costs 1000"
+    latitude: -23.627697
+    longitude: -46.655372
+    yearBuilt: 1985
+    askingPrice: 1000
+  - legalDescription: >-
+      "House that is 844 kilometers away from origin_point, built on 85 and costs 2500"
+    latitude: -23.627697
+    longitude: -46.655372
+    yearBuilt: 1985
+    askingPrice: 2500
+  - legalDescription: >-
+      "House that is 844 kilometers away from origin_point, built on 85 and costs 5000"
+    latitude: -23.627697
+    longitude: -46.655372
+    yearBuilt: 1985
+    askingPrice: 5000
+  - legalDescription: >-
+      "House that is 844 kilometers away from origin_point, built after 85 and costs 1000"
+    latitude: -23.627697
+    longitude: -46.655372
+    yearBuilt: 1986
+    askingPrice: 1000
+  - legalDescription: >-
+      "House that is 844 kilometers away from origin_point, built after 85 and costs 2500"
+    latitude: -23.627697
+    longitude: -46.655372
+    yearBuilt: 1986
+    askingPrice: 2500
+  - legalDescription: >-
+      "House that is 844 kilometers away from origin_point, built after 85 and costs 5000"
+    latitude: -23.627697
+    longitude: -46.655372
+    yearBuilt: 1986
+    askingPrice: 5000
+  - legalDescription: >-
+      "House that is 844 kilometers away from origin_point, built before 85 and costs 1000"
+    latitude: -23.627697
+    longitude: -46.655372
+    yearBuilt: 1984
+    askingPrice: 1000
+  - legalDescription: >-
+      "House that is 844 kilometers away from origin_point, built before 85 and costs 2500"
+    latitude: -23.627697
+    longitude: -46.655372
+    yearBuilt: 1984
+    askingPrice: 2500
+  - legalDescription: >-
+      "House that is 844 kilometers away from origin_point, built before 85 and costs 5000"
+    latitude: -23.627697
+    longitude: -46.655372
+    yearBuilt: 1984
+    askingPrice: 5000
+
+
